@@ -4,7 +4,7 @@
 
 1. Open up vscode
 2. Control + shift + 'p' to open command prompt (command + shift + p on apple)
-3. Start typing 'Connect to...' and the 'Connect to host' menu item will pop up. Select it
+3. Start typing 'Connect to...' and the 'Connect current window to host' menu item will pop up. Select it
 4. If asked, connect to ron.sr.edu host
 5. Enter your RON username if prompted
 6. Enter your RON password when prompted
@@ -23,6 +23,19 @@ git merge upstream/master master
 cd ~
 ```
 
+### This might be the best option
+
+1. Ensure all your local changes are committed to your current branch.
+- Save all your vscode additions, and commit them. 
+2. Fetch the latest updates from the remote:
+```git fetch origin```
+3. Rebase your changes onto the updated remote branch
+```git rebase origin/main```
+4. Resolve any conflicts: If conflicts arise during the rebase, Git will pause the process and prompt you to resolve them. After editing the files to resolve the conflicts, use:
+```
+git add .
+git rebase --continue
+```
 ## Lab Exercises (put these answers into your lab notebooks)
 
 #### 3a  "3 ways to change directories to HOME from untrimmed_fastq"

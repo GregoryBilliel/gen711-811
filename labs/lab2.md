@@ -1,49 +1,114 @@
-## Lab 2 (02/02/24)
+## Lab 2 (1/30/26)
 
-For this lab, we will:
-- On windows, use putty to connect to RON to change your password (so that you can connect with vscode later)
-- Install the 'remote-SSH' extension in visual studio code (vscode) (only do if you did not do this)
-- Use vscode to connect (ssh) to the UNH teaching HPC (RON)
-- Clone the gen711-811 github in your home directory on RON
+## Start this lab once you have access to RON through VScode
+First, well will change a couple settings in VScode to make your life easier in the long run.
+Tasks:
+1. Set 'ctrl+enter' key to send a line of code down to the terminal
+2. Test the keybinding
+3. Make a new lab notebook repository on github. 
+4. Clone that repository to RON
 
-### Windows (open putty and connect with ssh)
-Username example: jtm1171@ron.sr.unh.edu   
-Password example: jtm1171uM!z$    
+### To set the ctrl+enter run code shortcut:
+1. Open the keybindings file of VScode
+- Windows: File ==> preferences ==> Keyboard shortcuts 
+- Mac: Code ==> Settings ==> Keyboard shortcuts
+2. Search for ```workbench.action.terminal.runSelectedText``` in the keybindings search bar
+3. Press the icon on the left to open a window with this message "Press desired key combination..." and make your choice. (I suggest Ctrl+Enter)
+4. Press enter to store your binding. 
 
-### Set up remote-ssh so that you can connect to RON through vscode [see here](https://code.visualstudio.com/docs/remote/ssh). 
-1. Open up vscode and click the 'building blocks' icon on the left hand side of vscode 
-2. In the upper left search bar, type 'Remote SSH'
-3. Click 'install' 
-4. Open the vscode 'command pallete' by pressing 'CMD + Shift + P'. A little bar at the top of the screen should pop up. Begin to type 'Remote-SSH: Add New SSH Host...'. Before you get too far, you should see it pop-up. Click it. If you are asked what the host operating system is, click **LINUX**
-5. **Enter your username and password when prompted.** The username is the students id.
-   
-Username example: jtm1171@ron.sr.unh.edu  
-Password example: jtm1171zfG!1  
+### Next, test the new keybinding: 
+1. hit ctrl+n to open a new document. 
+2. In the new document, write ```echo "Hello! I'm coding"```
+3. With your cursor next to ```echo "Hello! I'm coding"```, press 'ctrl' and then 'enter' together
+Did it send ```echo "Hello! I'm coding"``` to your terminal? What did it return?
 
-The password is your username + zfG!1 
-Example: Your initial password for the class server (Ron) is: ```acb1078zfG!1``` The server name is ron.sr.unh.edu and your username is ``` acb1078 ```  
-7. Click the config file that contains .ssh folder
-8. A window in the lower left should pop-up. **Click connect.** A new window should pop up 
-9. You are logged in to RON when a new vscode pops up. 
+### Make repository on GitHub for your lab notebook on RON and your local computer
+Now that you are connected to RON, lets make a lab notebook in your repo to be graded each week. The easiest way to do this is to first create a new repository on GitHub.com, and then clone that to your home directory on RON and your laptop.
+1. Login to GitHub with the credentials you made for Lab 1
+2. On your GitHub page, click 'Repositories' 
+3. Click the green 'New' button
+4. In 'Repository Name', type 'Bioinformatics-Notes'  **No spaces. Lets all keep the same simple name**
+5. Flip the switch to 'on' for the 'Add README'
+6. Click 'Create repository'
 
-### GITHUB Clone gen711-811 
-If you set up remote ssh correctly, you are now in your home directory at RON. You can clone your gen711-811 fork in your home directory. This will create 'gen711-811' repo in your home directory. Changes made here can be pushed to github. 
-
-To run this command, you MUST replace <YOURGITHUBUSERNAME> with your **github username** that you created before class.
+### Next, we will clone the repo on RON, and open up the folder with VScode (using the Remote SSH extension)
+1. Open up vscode
+2. Control + shift + 'p' to open command prompt (command + shift + p on apple)
+3. Start typing 'Connect to...' and the 'Connect current window to host' menu item will pop up. Select it
+4. If asked, connect to ron.sr.edu host
+5. Enter your RON username if prompted
+6. Enter your RON password when prompted
+7. Once you are successfully connected to RON and in your home directory, clone with the 'git clone' command:
 ```
 cd $HOME
-git clone https://github.com/<YOURGITHUBUSERNAME>/gen711-811.git
+git clone https://github.com/<YOURGITHUBUSERNAME>/Bioinformatics-Notes.git
 ```
-### Make a lab notebook  
-Now that you are connected to RON, make a lab notebook in your repo to be graded each week. In vscode terminal, go to 'file' --> 'new text file'. Save this empty file as 'yourlastname_yourfirstname.md'. Keep notes in this file as demonstrated by your instructor to get full attendence points.
+You should see an indication that it downloaded to your home directory 
 
-### BONUS if everything goes well up until this point
+### Next, we will open the directory you cloned in VScode to save the workspace, then make a lab notebook document that will synchronize on RON and your machine.
+1. In the VScode window that you have connected to RON, go to 'File --> Open folder'
+2. The command pallet in VScode should show your 'home directories' including the 'Bioinformatics-Notes' directory. Select it.  
+3. If you did this correctly, you should now see the README file pop up on the left in the list of files. Click on it to open it. 
+4. While we are at it, lets save your VScode workspace in the repo directory. Click 'File --> Save Workspace As...' and click on the 'Bioinformatics-Notes' directory to save the workspace there. The workspace file just lists your VScode preferences.This way, you can load this workspace each week to pick up where you left off.   
+5. In vscode terminal, go to 'file' --> 'new text file'. Save this empty file as 'yourlastname_yourfirstname.md'. Keep notes in this file as demonstrated by your instructor to get full attendance points. Add some short random text to this document to make sure that it is picked up. 
+6. If you've done everything above correctly, new documents and changes should be tracked VScode and Git. To get your changes incorporated into your repository at GitHub, click on the github bubble fork (usually the third icon down on the left of VScode). Enter any random text you want into the 'Message' box, and then hit the commit button. This should upload your new files/changes to your GitHub repo. 
 
-**Save your vscode workspace in your repo on RON and your local machine.**  
-Go to 'File' --> 'Save Workspace As' and save it to the 'gen711-811' folder on RON. This way, you can load this workspace each week to pick up where you left off. 
+Note: Text files saved with the '.md' after it will be interpreted at 'markdown' format. We will get into this soon. 
 
-**Generate ssh-keys to log into RON without usernames and passwords**  
+### Updating your copy of 'gen711-811' each week.
+### If you forked gen711-811, this is probably the easiest method
+To get new course files added to your repository later, you will need to add the original repository (the one you forked) as a 'remote' [see here for help](https://stackoverflow.com/questions/3903817/pull-new-updates-from-original-github-repository-into-forked-github-repository),[and here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)  
+To add updates/new files from the gen711-811 repo, copy and paste these lines into terminal on RON:
+```
+cd $HOME/gen711-811
+git remote add upstream https://github.com/jthmiller/gen711-811.git
+git fetch upstream
+git merge upstream/master master
+```
+The first line is to get you back to your home directory just in case you switched. 
+The second is to go looking for any changes that I might have made in my copy of 'gen711-811'
+The third is to get any of those changes
+The fourth is to merge my changes 'upstream/master' with your 'master'
 
+Note, git merge is like "git pull" which is fetch + merge. Or, better, you can replay your local work on top of the fetched branch like a "git pull --rebase"
+```
+git rebase upstream/master
+```
+
+
+
+1. Ensure all your local changes are committed to your current branch.
+- Save all your vscode additions, and commit them. 
+2. Fetch the latest updates from the remote:
+```git fetch origin```
+3. Rebase your changes onto the updated remote branch
+```git rebase origin/main```
+4. Resolve any conflicts: If conflicts arise during the rebase, Git will pause the process and prompt you to resolve them. After editing the files to resolve the conflicts, use:
+```
+git add .
+git rebase --continue
+```
+#### Resolving Conflicts
+In both scenarios, if the same lines of code were changed in both your local work and the remote updates, Git will indicate a conflict. You must manually edit the conflicted files to choose which changes to keep. Your editor will show markers (like <<<<<<< and >>>>>>>) to help you identify the conflicting sections. 
+After resolving the conflicts, add the file(s) and continue the operation as described above. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Optional: Generate ssh-keys to log into RON without usernames and passwords**  
+
+### This will really speed things up for you. Ask the instructor before proceeding to this step
 First, open 'terminal' on your mac. We are going to use the terminal to generate the keys and restrict the permissions on the private key file. For macOS / Linux, run the following shell command, replacing the path to your private key if necessary:
 ```
 cd ~/.ssh
@@ -54,7 +119,7 @@ chmod 400 ~/.ssh/id_ed25519
 
 - Next, share the public key with the Ron server
 ```
-ssh-copy-id username@ron.sr.unh.edu
+ssh-copy-id USERNAME@ron.sr.unh.edu
 ```
 If that doesn't work, we can try:
 ```
@@ -72,17 +137,5 @@ Then navigate to the private key file in Windows Explorer, right-click and selec
 
 <br>
 
-### Next Week
 
-To get new course files added to your repository later, you will need to add the original repository (the one you forked) as a 'remote' [see here for help](https://stackoverflow.com/questions/3903817/pull-new-updates-from-original-github-repository-into-forked-github-repository),[and here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)  
-To add updates from the gen711-811 repo:
-```
-cd gen711-811
-git remote add upstream https://github.com/jthmiller/gen711-811.git
-git fetch upstream
-git merge upstream/master master
-```
-Note, git merge is like "git pull" which is fetch + merge. Or, better, you can replay your local work on top of the fetched branch like a "git pull --rebase"
-```
-git rebase upstream/master
-```
+
