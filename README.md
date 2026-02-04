@@ -3,6 +3,8 @@
 ### [Lab 1](labs/lab1.md) (take home lab, 01/27/26)
 ### [Lab 2](labs/lab2.md) (01/30/26)
 
+new pull test
+
 ## Helpful links
 HCGS youtube playlist for introduction to shell commands [here](https://www.youtube.com/playlist?list=PLLV_tmUM69VA4B0DKfNEBsaL9ARlpp__W)
 
