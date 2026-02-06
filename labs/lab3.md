@@ -1,5 +1,67 @@
 # Lab3 - 2/6/26
 
+# MY OWN NOTES SECTION
+
+pwd : print working directory
+
+directory : similar to a folder, things that contains other things like folders or files
+
+ls : list, shows everything that is in the directory/folder you are currently in
+
+cd : goes towards a chosen directory
+
+cd ../ : steps back one directory, each "../" adds one step back
+
+clear : just clears the terminal screen
+
+ls ' : if you do this just put "'" to end it
+
+Ctrl + C : cancels what you are doing/the current running command
+
+Tab Complete : if you hit tab it will auto complete what you have typed, click it twice and it will show all the options that the autocomplete has
+
+ls -F : lists but also tells you more data, "/" on names means they are directories you can enter into
+
+man ls : manual list, tells you what options you have
+
+ls -lrth : list with a bunch of extra metadata info like when and who made what along with permissions
+
+head : shows you the header of the chosen file, sneak peek without fully opening it
+
+cat : prints the whole to the screen
+
+conda : environment manager, doubt I will need this info now but I will write it down anyways
+
+cd ~ : goes back to base user page, can also do cd $HOME
+
+relative paths : cd whatever is the path relative to where you are
+
+absolute paths : pwd which starts at the start of the computer and takes the literal step by step path to wherever you are trying to go and traces it out
+
+rm : deletes anything at RON you haven't pushed to GitHub
+
+rm -fR : removes directory and everything in it
+
+echo : evaluate a variable
+
+history : shows command history 
+
+grep : search command for within a file (Global Regular Expression Print), put the search query in '' and then the location after. Put ^ before your query inside the '' to search at the beginning of each line. Put > at the end followed by a file name to create a new file with what you searched
+
+ls *fastq : lists everything that has fastq on the end of it, doesn't need to be fastq just whatever and you can put stuff before the * as well, * just means "whatever you can put here" 
+
+"|" : pipes the output of a first command into the input of a second command
+
+wc -l : word count, counts the number of lines in a given output
+
+wc : word count basic, line, word and characters in order
+
+ls /bin/c* | wc -l : takes all of the files from bin that start with c and then counts them 
+
+ls /bin/ | grep '^c' | wc -l : lists bin, greps that search to look for starting c, word counts that output and gives you the line count
+
+less file-c-prog : gives you a scrollable list of the files that starts with c in whatever director you are in
+
 Add text here
 
 ## Before lab begins
@@ -17,9 +79,20 @@ Add text here
 # Part 1 (lab 3)
 ### Questions:
 - What is a command shell and why would I use one?
+
+let's us navigate our files easily
+
 - How can I move around on my RON?
+
+cd, ls, pwd are all useful for moving around
+
 - How can I see what files and directories I have?
+
+ls, ls -F for more info
+
 - How can I specify the location of a file or directory on my computer?
+
+pwd is the easiest way to do it, echo also maybe
 
 ### Objectives:
 - Describe key reasons for learning shell.
@@ -69,21 +142,50 @@ To change directories, use 'cd' and then hit tab two times to see directories in
 ### Complete the questions below when intrstructed. Push the changes to this document to recive credit for attending the lab
 
 #### 1. What are 3 ways to change directories to your home directory from the  untrimmed_fastq directory?
-1.
-2.
-3.
+1. cd $HOME, takes you straight to home, same as cd ~
+2. cd ~ 
+3. cd ../ + however many ../ you need to get back (can figure it out with pwd in your current directory) 
+4. cd /home/users/gjb1039/ uses the absolute path
 
 #### 2. How many programs in /bin 
 2. Do each of the following tasks from your current directory using a single ls command for each:
     - List all of the files in /bin that start with the letter ‘c’.
+
+ls c*
+
     - List all of the files in /bin that contain the letter ‘a’.
+
+ls c
+
     - List all of the files in /bin that end with the letter ‘o’.
+
+ls *o
+
     - Bonus: List all of the files in /bin that contain the letter ‘a’ or the letter ‘c’.
 
+ls 
+
 #### Answers here
-Start with the letter c ____
-Start with the letter a ____
-Start with the letter o ____
+Start with the letter c 
+
+ls c*
+
+Start with the letter a 
+
+ls a*
+
+Start with the letter o 
+
+ls o*
+
 Contain the letter ‘a’ or the letter ‘c’ ____
 
+We aren't getting to this today I think 
+
 #### What command/commands would you use to find the line number in your history for the command that listed all the '.fastq' files using the absolute path. Paste your answer below.
+
+history | grep '*fastq' 
+
+it was line 100 for me in my history
+
+we didn't do the absolute path part, so with the absolute path it would be line 134 in my history after doing the "ls /home/users/gjb1039/gen711-811/shell_data/untrimmed_fastq/*fastq" command first
