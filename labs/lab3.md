@@ -189,3 +189,5 @@ history | grep '*fastq'
 it was line 100 for me in my history
 
 we didn't do the absolute path part, so with the absolute path it would be line 134 in my history after doing the "ls /home/users/gjb1039/gen711-811/shell_data/untrimmed_fastq/*fastq" command first
+
+asfg
