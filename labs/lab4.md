@@ -4,6 +4,47 @@ teaching: 30
 exercises: 15
 ---
 # Lab4 - 2/13/26
+
+# MY NOTES
+
+pwd gives the absolute path for the directory/folder/file you are currently in
+
+cd with nothing after it takes to the home directory, also cd ~ or cd $HOME
+
+cd ~/[tab] tells you what is in your home, easy way to navigate around
+
+cd ../ is a backspace, can chain them together
+
+ls -a : lists all the files, including hidden ones, could also do ls --all
+
+ls .* : lists just all the hidden files and tells what is inside them
+
+ls -laF : lists the files, user and permissions as well as when it was created
+
+drwxrwxrwx : permissions
+
+d = directory
+
+r = read
+
+w = write
+
+execute = x
+
+the order of the rwx trios indicates who has permissions, first three are for the owner I remember that much at least
+
+second gruop in for group 
+
+last gruop is for others
+
+ls /usr/bin/c* | wc -l : piped command, doubt you'll need this again but fuck it here it is
+
+tail : looks at the end of a file
+
+less -S : shows a window of the file in an easy way
+
+
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - View, search within, copy, move, and rename files. Create new directories.
@@ -16,7 +57,25 @@ exercises: 15
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - How can I view and search file contents?
+
+ls command, pretty simple
+
 - How can I create, copy and delete files and directories?
+
+touch : makes file, put name after with .txt 
+
+mkdir : makes directory, put name after
+
+cp : copies, put source file then destination next, can put a directory path as well
+
+cp -r: recursive copy of everything that is in a directory
+
+rm : removes a file
+
+rmdir : removes a directory
+
+rm -r :removes a nonempty directory 
+
 - How can I control who has permission to modify a file?
 - How can I repeat recently used commands?
 
@@ -25,12 +84,17 @@ exercises: 15
 ### EXERCISE 1: NAVIGATION PRACTICE
 Navigate to your untrimmed_fastq directory in one command
 
+cd gen711-811/shell_data/untrimmed_fastq/
+
 ### EXERCISE 2: WILDCARDS
 What would the output look like if the wildcard could *not* be matched? Compare the outputs
+
+it just says it could not find the file or directory
 
 ### EXERCISE 3: NAVIGATING PRACTICE
 Navigate to your home directory. From there, list the contents of the untrimmed_fastq directory.
 
+ls gen711-811/shell_data/untrimmed_fastq/
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -57,6 +121,8 @@ what will `ls ../backup` display?
   Also, we did not specify `-F` to display `/` at the end of the directory names.
 4. Yes: `../backup` refers to `/Users/backup`.
 
+Number 4 is the example, the ls command ../ goes back into the users folder and then lists the contents of the right backup directory 
+
 :::::::::::::::::::::::::
 
 
@@ -67,17 +133,39 @@ Hint: hidden files and folders in Unix start with ., for example .my_hidden_dire
 
 What is the hidden file name in the hidden directory?
 
+Already did this, it was a hidden file that had some text in it, found using ls -a
+
 ### EXERCISE 5: HISTORY
 Find the line number in your history for the command that listed all the .sh files in /usr/bin. Rerun that command.
+
+Go into history, find the number of the desired command, then put ![#] into the terminal
+
+could also pipe a history command into a grep command to search through your history easily
+
+ls /usr/bin/*.sh was line number 231 in my history, reran using !231
 
 ### EXERCISE 6: FILE CONTENTS
 Print out the contents of the ~/shell_data/untrimmed_fastq/SRR097977.fastq file. What is the last line of the file?
 
+cat prints out the whole file so: 
+
+cat ~/gen711-811/shell_data/untrimmed_fastq/*977.fastq
+
+last file line: C:CCC::CCCCCCCC<8?6A:C28C<608'&&&,'$
+
+can you do grep [query] [file name] to find the amount of times it is listed. Add a pipe with a wc -l to get an exact number of the lines that have it
+
+tail -n3 : only gives last 3 lines of a tail
+
 ### EXERCISE 7: PATHS
 From your home directory, and without changing directories, use one short command to print the contents of all of the files in the ~/shell_data/untrimmed_fastq directory.
 
+cat ~/gen711-811/shell_data/untrimmed_fastq/*
+
 ### EXERCISE 8: LESS
 What are the next three nucleotides (characters) after the first instance of the sequence quoted above?
+
+we used less in class, we didnt use it all much 
 
 ### File Permissions Help
 The first part of the output for the `-l` flag gives you information about the file's current permissions. There are ten slots in the
@@ -101,9 +189,14 @@ Create a backup of each of your FASTQ files using cp. (Note: You’ll need to do
 Use a wildcard to move all of your backup files to a new backup directory.
 Change the permissions on all of your backup files to be write-protected.
 
+mv : moves files to other places
+
+mv *backup.fastq backup/
 
 ### EXERCISE 10: PROGRAMS
 After loading a conda environment, where is the program 'fastqc' stored?
+
+
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
