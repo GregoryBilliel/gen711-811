@@ -144,6 +144,8 @@ Stored in /home/share/anaconda/envs/genomics/bin/fastqc
 
 Also unzipped all the fastqc .zip files we had that were zipped into a new directory
 
+unzip [file name] to unzip files
+
 ```
 
 ### Explore the fastqc output. Which samples failed at least one of FastQC’s quality tests? What test(s) did those samples fail?
