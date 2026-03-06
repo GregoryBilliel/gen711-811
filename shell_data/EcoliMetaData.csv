@@ -1,5 +1,5 @@
 strain,generation,clade,reference,population,mutator,facility,run,read_type,read_length,sequencing_depth,cit
-ZDB464,20000,"(C1,C2)",Blount et al. 2012,Ara-3,None,MSU RTSF,SRR098285,single,36,29.7,unknown
+ZDB464,20000,"C1_C2",Blount et al. 2012,Ara-3,None,MSU RTSF,SRR098285,single,36,29.7,unknown
 REL10979,40000,C3+H,Blount et al. 2012,Ara-3,plus,MSU RTSF,SRR098029,single,36,30.1,plus
 REL10988,40000,C2,Blount et al. 2012,Ara-3,plus,MSU RTSF,SRR098030,single,36,30.2,minus
 REL2181A,5000,,Tenaillon et al. 2016,Ara-3,None,MSU RTSF,SRR2589044,paired,150,60.2,unknown
@@ -16,12 +16,12 @@ REL1166B,2000,,Tenaillon et al. 2016,Ara-3,None,MSU RTSF,SRR2591041,paired,150,1
 ZDB357,30000,C2,Blount et al. 2012,Ara-3,None,MSU RTSF,SRR098280,single,35,111.2,unknown
 REL764A,500,,Tenaillon et al. 2016,Ara-3,None,IntraGen,SRR2584852,paired,101,113.4,unknown
 ZDB16,30000,C1,Blount et al. 2012,Ara-3,None,MSU RTSF,SRR098031,single,35,113.9,unknown
-ZDB458,20000,"(C1,C2)",Blount et al. 2012,Ara-3,None,MSU RTSF,SRR098284,single,35,126.8,unknown
+ZDB458,20000,"C1_C2",Blount et al. 2012,Ara-3,None,MSU RTSF,SRR098284,single,35,126.8,unknown
 REL11365,50000,C3+H,Tenaillon et al. 2016,Ara-3,plus,MSU RTSF,SRR2584866,paired,150,138.3,plus
 ZDB446,15000,UC,Blount et al. 2012,Ara-3,None,MSU RTSF,SRR098283,single,35,141.1,unknown
 ZDB409,5000,unknown,Blount et al. 2012,Ara-3,,MSU RTSF,SRR098281,single,35,144.2,unknown
 REL11364,50000,C3+H,Tenaillon et al. 2016,Ara-3,plus,MSU RTSF,SRR2584864,single,51,156.6,plus
-ZDB467,20000,"(C1,C2)",Blount et al. 2012,Ara-3,,MSU RTSF,SRR098286,single,35,,unknown
+ZDB467,20000,"C1_C2",Blount et al. 2012,Ara-3,,MSU RTSF,SRR098286,single,35,,unknown
 ZDB477,25000,C1,Blount et al. 2012,Ara-3,,MSU RTSF,SRR098287,single,35,,unknown
 ZDB483,25000,C3,Blount et al. 2012,Ara-3,,MSU RTSF,SRR098288,single,35,,unknown
 ZDB199,31500,C1,Blount et al. 2012,Ara-3,None,MSU RTSF,SRR098044,single,35,,minus

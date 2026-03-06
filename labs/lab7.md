@@ -112,11 +112,48 @@ This metadata describes information on the *Ara-3* clones and the columns repres
 Based on the metadata, can you answer the following questions?
 
 1. How many different generations exist in the data?
+
+61 generationsm I just counted the file though
+
+cut -f2 -d',' [filename]
+
+-f2 -d cuts out the second section (our generations) and lists them in our file
+
+cut -f2 -d',' Ecoli_metadata_composite.csv | sort | uniq | grep -v 'gen' | wc -l
+
+This selects the generation line in the data, sorts it, takes out all the uniques, greps out the generations header, and then counts the number of lines
+
+result was 25
+
 2. How many rows and how many columns are in this data?
+
+cat -n gives row number
+
+tr ',' '\n'
+
+head -n1 EcoliMetaData.csv | tr ',', '\n' | wc -l 
+
+head -n1 gives only the first line of the file, which we know is the header, separated by commas, we pipe this into tr ',' '\n' which turns the commas into breaks for new lines, then wc -l just counts it
+
+tr transposes commas into something else
+
 3. How many citrate+ mutants have been recorded in **Ara-3**?
+
+grep plus EcoliMetaData.csv | wc -l
+
+Shows all lines that have plus in the mutator column as well though, so doesn't work properly
+
 4. How many hypermutable mutants have been recorded in **Ara-3**?
 
+cut -f6 -d',' EcoliMetaData.csv | sort | uniq -c
 
+Not working right, likely due to "(C1,C2)", commas in there is messing things up likely
+
+sed 's/\"(C1,C2\)\"/C1_C2/g EcoliMetaData.csv > NewDataFile.csv
+
+ctrl + d highlights everything that matches what you are highlighting currently, good to change multiple things at once
+
+Could also do ctrl + f, search for your thing, then replace them all at once that way
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
